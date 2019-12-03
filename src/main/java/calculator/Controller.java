@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSession;
 
 @org.springframework.stereotype.Controller
 public class Controller {
-    @RequestMapping(value = "/")   //, method= RequestMethod.POST
+    @RequestMapping(value = "/", method = {RequestMethod.POST, RequestMethod.GET})
     public String calculate(@RequestParam(required = false, value = "number1") Double num1, @RequestParam(required = false, value = "number2") Double num2,
                             @RequestParam(required = false, value = "action") Character ch, HttpSession session) {
         if (num1 == null && num2 == null) {
@@ -25,7 +25,7 @@ public class Controller {
             } else if (ch == 'x') {
                 num = num1 * num2;
             }
-       //     System.out.println("result = " + num);
+            //     System.out.println("result = " + num);
             session.setAttribute("num", num);
             return "result";
         }

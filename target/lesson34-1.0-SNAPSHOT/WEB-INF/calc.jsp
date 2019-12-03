@@ -1,7 +1,7 @@
 <html>
 <body>
 
-<form action="calc" method="POST">
+<form action="/" method="POST">
     <label for="number1"><b>Enter number1: </b></label>
     <input type="number" placeholder="0" name="number1" required>
     <p></p>
